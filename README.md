@@ -5,6 +5,15 @@ I created a dynamic C library by detecting the functions which i am using mostly
 ## **_Folder Structure_**
 - ### *./include/*
 	Contains header files.
+	utils.h
+	```c
+	void utils_putchar(int fd, char c);
+	size_t utils_strlen(const char *str);
+	size_t utils_strnlen(const char *str, size_t n);
+	int utils_strcmp(const char *a, const char *b);
+	void utils_putnbr(int fd, int nb);
+	void utils_putstr(int fd, const char *str);
+	```
 - ### *./lib/*
 	Includes dynamic library(ies). *(final step of the project)*
 - ### *./obj/*
