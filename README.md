@@ -5,8 +5,8 @@ I created a dynamic C library by detecting the functions which i am using mostly
 ## **_Folder Structure_**
 - ### *./include/*
 	Contains header files.
-	utils.h
 	```c
+	/* utils.h */
 	void utils_putchar(int fd, char c);
 	size_t utils_strlen(const char *str);
 	size_t utils_strnlen(const char *str, size_t n);
