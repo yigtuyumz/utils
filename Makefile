@@ -43,6 +43,7 @@ all: $(LIBRARY)
 $(LIBRARY): $(OBJECTS)
 # compiling source files
 # here '$@' expands to $(EXECUTABLE) = '$(BINDIR)/utils' = './bin/utils'
+	mkdir -p $(LIBDIR)
 	$(CC) $(LDFLAGS) $(OBJECTS) -o $@
 
 

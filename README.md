@@ -13,8 +13,8 @@ I created a dynamic C library by detecting the functions which i am using mostly
 	int utils_strcmp(const char *a, const char *b);
 	void utils_putnbr(int fd, int nb);
 	void utils_putstr(int fd, const char *str);
-	extern char * utils_strcpy(char * restrict dst, const char * restrict src);
-	extern char * utils_strncpy(char * restrict dst, const char * restrict src, size_t len);
+	char * utils_strcpy(char * restrict dst, const char * restrict src);
+	char * utils_strncpy(char * restrict dst, const char * restrict src, size_t len);
 	```
 - ### *./lib/*
 	Includes dynamic library(ies). *(final step of the project)*
