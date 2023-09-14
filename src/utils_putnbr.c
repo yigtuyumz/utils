@@ -1,8 +1,5 @@
 #include "../include/utils.h"
 
-/*
- * Sayisal degerleri ekrana yazar.
- */
 void
 utils_putnbr(int fd, int nb)
 {

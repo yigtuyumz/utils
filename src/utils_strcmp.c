@@ -1,10 +1,5 @@
 #include "../include/utils.h"
 
-/*
- * Eger a isaretcisi ile gosterilen string ifadesinin icerisindeki her bir
- * karakter, b isaretcisi ile gosterilen string ifadesinin icerisindeki
- * karaklerler ile sirasiyla esit ise 1, degil ise 0 dondurur.
- */
 int
 utils_strcmp(const char *a, const char *b)
 {

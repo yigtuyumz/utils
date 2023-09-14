@@ -12,8 +12,6 @@
 #
 
 
-
-
 CC = gcc
 # Position Independent Code
 CFLAGS = -Wall -Wextra -Werror -I./include -fPIC
@@ -22,9 +20,6 @@ LDFLAGS = -shared
 SRCDIR = ./src
 OBJDIR = ./obj
 LIBDIR = ./lib
-
-
-
 
 # list of all c files in ./src directory.
 SOURCES = $(wildcard $(SRCDIR)/*.c)
@@ -36,19 +31,23 @@ OBJECTS = $(patsubst $(SRCDIR)/%.c, $(OBJDIR)/%.o, $(SOURCES))
 LIBRARY = $(LIBDIR)/libutils.so
 
 
+
 .PHONY: all clean re
+
+
 
 # target: prerequisites
 all: $(LIBRARY)
 
 
 $(LIBRARY): $(OBJECTS)
-	# compiling source files
-	# here '$@' expands to $(EXECUTABLE) = '$(BINDIR)/utils' = './bin/utils'
+# compiling source files
+# here '$@' expands to $(EXECUTABLE) = '$(BINDIR)/utils' = './bin/utils'
 	$(CC) $(LDFLAGS) $(OBJECTS) -o $@
 
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c
+	mkdir -p $(OBJDIR)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 
