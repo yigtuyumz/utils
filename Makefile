@@ -19,7 +19,7 @@ CFLAGS = -Wall -Wextra -Werror -I./include -fPIC
 LDFLAGS = -shared
 SRCDIR = ./src
 OBJDIR = ./obj
-LIBDIR = ./lib
+LIBDIR = ./out
 
 # list of all c files in ./src directory.
 SOURCES = $(wildcard $(SRCDIR)/*.c)

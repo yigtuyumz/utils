@@ -1,5 +1,5 @@
 /obj/
 /obj/*
 *.txt
-/lib/
-/lib/*
+/out/
+/out/*
