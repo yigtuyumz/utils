@@ -19,10 +19,10 @@ CFLAGS = -Wall -Wextra -Werror -I./include -fPIC
 LDFLAGS = -shared
 SRCDIR = ./src
 OBJDIR = ./obj
-LIBDIR = ./out
+LIBDIR = ./lib
 
 # list of all c files in ./src directory.
-SOURCES = $(wildcard $(SRCDIR)/*.c)
+SOURCES = $(wildcard $(SRCDIR)/utils_*.c)
 
 # converts ./src/*.c to ./src/*.o in the SOURCES variable.
 OBJECTS = $(patsubst $(SRCDIR)/%.c, $(OBJDIR)/%.o, $(SOURCES))
