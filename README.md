@@ -15,7 +15,14 @@ I created a dynamic C library by detecting the functions which i am using mostly
 	void utils_putstr(int fd, const char *str);
 	char * utils_strcpy(char * restrict dst, const char * restrict src);
 	char * utils_strncpy(char * restrict dst, const char * restrict src, size_t len);
+
 	```
+
+	```makefile
+	# include libutils.so file to the project
+	FLAGS = -L/path/to/so/file -llibnamewithoutextension -Wl,-rpath=/path/to/so/file
+	```
+
 - ### *./out/*
 	Includes dynamic library(ies). *(final step of the project)*
 - ### *./obj/*
