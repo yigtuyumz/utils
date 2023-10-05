@@ -22,40 +22,40 @@ OBJDIR = ./obj
 LIBDIR = ./lib
 
 # list of all c files in ./src directory.
-SOURCES = $(wildcard $(SRCDIR)/utils_*.c)
+SRCS = $(wildcard $(SRCDIR)/utils_*.c)
 
-# converts ./src/*.c to ./src/*.o in the SOURCES variable.
-OBJECTS = $(patsubst $(SRCDIR)/%.c, $(OBJDIR)/%.o, $(SOURCES))
+# converts ./src/*.c to ./src/*.o in the SRCS variable.
+OBJECTS = $(patsubst $(SRCDIR)/%.c, $(OBJDIR)/%.o, $(SRCS))
 
 # location of the compiled binary file.
 LIBRARY = $(LIBDIR)/libutils.so
 
 
 
-.PHONY: all clean re
+.PHONY: all clean re make_dirs
 
 
 
 # target: prerequisites
-all: $(LIBRARY)
+all: make_dirs $(LIBRARY)
 
+# provides one time run mkdir
+make_dirs:
+	@mkdir -p $(LIBDIR)
+	@mkdir -p $(OBJDIR)
 
-$(LIBRARY): $(OBJECTS)
 # compiling source files
-# here '$@' expands to $(EXECUTABLE) = '$(BINDIR)/utils' = './bin/utils'
-	mkdir -p $(LIBDIR)
+$(LIBRARY): $(OBJECTS)
 	$(CC) $(LDFLAGS) $(OBJECTS) -o $@
 
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c
-	mkdir -p $(OBJDIR)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 
 clean:
-	rm -f $(OBJECTS) $(LIBRARY)
+	rm -rf $(OBJDIR) $(LIBDIR)
 
 
 re: clean all
-
 

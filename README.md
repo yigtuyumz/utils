@@ -28,7 +28,7 @@ I created a dynamic C library by detecting the functions which i am using mostly
 - ### *./obj/*
 	For every source file, compiler creates an object file and puts in here.
 	All of the object files are located in here.<br>
-	**TODO** Produce only one obj file instead of many files.
+	**TODO** Produce only one object file instead of many files.
 - ### *./src/*
 	The source files.
 	For each function, I created a source file with the same name as the function.

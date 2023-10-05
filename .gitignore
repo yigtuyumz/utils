@@ -1,6 +1,8 @@
 /obj/
-/obj/*
-*.txt
 /lib/
-/lib/*
-./.vscode
+/.vscode
+/tests/*
+!/tests/Makefile
+!/tests/README.md
+/tests/out/
+*.txt
