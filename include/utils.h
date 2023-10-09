@@ -9,7 +9,7 @@
 extern void utils_putchar(int fd, char c);
 
 /*
- * Sayisal degerleri ekrana yazar.
+ * Sayisal degerleri belirtilen dosya tanimlayicisina yazar.
  */
 extern void utils_putnbr(int fd, int nb);
 
@@ -18,6 +18,12 @@ extern void utils_putnbr(int fd, int nb);
  * tanimlayicisina yazar.
  */
 extern void utils_putstr(int fd, const char *str);
+
+/*
+ * `dest` ile gosterilen string ifadesinin sonuna, `src` ile gosterilen string
+ * ifadesini ekler.
+ */
+extern char *utils_strcat(char *dest, const char *src);
 
 /*
  * `a` isaretcisiyle gosterilen string ifadesini
@@ -38,6 +44,12 @@ extern char *utils_strcpy(char * restrict dst, const char * restrict src);
  * String'in kac karakterden olustugunu dondurur.
  */
 extern size_t utils_strlen(const char *str);
+
+/*
+ * `dest` ile gosterilen string ifadesinin sonuna, `src` ile gosterilen string
+ * ifadesinin ilk `n` karakterini ekler.
+ */
+extern char *utils_strncat(char *dest, const char *src, size_t n);
 
 /*
  * en fazla `n` adet karakter olmak uzere, `a` isaretcisi ile gosterilen string
