@@ -20,9 +20,11 @@ extern void utils_putnbr(int fd, int nb);
 extern void utils_putstr(int fd, const char *str);
 
 /*
- * Eger `a` isaretcisi ile gosterilen string ifadesinin icerisindeki her bir
- * karakter, `b` isaretcisi ile gosterilen string ifadesinin icerisindeki
- * karaklerler ile sirasiyla esit ise 1, degil ise 0 dondurur.
+ * `a` isaretcisiyle gosterilen string ifadesini
+ * `b` isaretcisiyle gosterilen string ifadesi ile karsilastirir.
+ * iki string ifadesinin ASCII farkini dondurur. dolayisiyla karsilastirilan
+ * ifadeler denk ise 0, degil ise farkli olduklari karakterin ASCII
+ * farkini dondurur.
  */
 extern int utils_strcmp(const char *a, const char *b);
 
@@ -30,12 +32,21 @@ extern int utils_strcmp(const char *a, const char *b);
  * `src` ile isaret edilen string ifadesini, `dst` ile isaret edilen string
  * ifadesine kopyalar.
  */
-extern char * utils_strcpy(char * restrict dst, const char * restrict src);
+extern char *utils_strcpy(char * restrict dst, const char * restrict src);
 
 /*
  * String'in kac karakterden olustugunu dondurur.
  */
 extern size_t utils_strlen(const char *str);
+
+/*
+ * en fazla `n` adet karakter olmak uzere, `a` isaretcisi ile gosterilen string
+ * ifadesini, `b` isaretcisi ile gosterilen string ifadesiyle karsilastirir.
+ * iki string ifadesinin ASCII farkini dondurur. dolayisiyla karsilastirilan
+ * ifadeler denk ise 0, degil ise farkli olduklari karakterin ASCII
+ * farkini dondurur.
+ */
+extern int utils_strncmp(const char *a, const char *b, size_t n);
 
 /*
  * en fazla `n` adet karakter olmak uzere, `src` ile isaret edilen string
@@ -46,11 +57,18 @@ extern size_t utils_strlen(const char *str);
  * eger `n` degeri `src` stringinin uzunlugundan buyukse veya esit ise,
  * `src`'yi dst icerisine oldugu gibi kopyalar. (sonuna NULL ekleyerek)
  */
-extern char * utils_strncpy(char * restrict dst, const char * restrict src, size_t len);
+extern char *utils_strncpy(char * restrict dst, const char * restrict src, size_t len);
 
 /*
  * String'in n degerine kadar kac karakterden olustugunu dondurur.
  */
 extern size_t utils_strnlen(const char *str, size_t n);
+
+/*
+ * `haystack` ile gosterilen string ifadesinde, `needle` ile gosterilen string
+ * ifadesini arar. eger eslesme var ise, eslesmenin basladigi noktayi
+ * gosteren isaretciyi dondurur. eger eslesme yok ise, NULL dondurur.
+ */
+extern char *utils_strstr(char *haystack,char *needle);
 
 #endif /* UTILS_H */

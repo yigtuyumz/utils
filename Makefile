@@ -14,7 +14,7 @@
 
 CC = gcc
 # Position Independent Code
-CFLAGS = -Wall -Wextra -Werror -I./include -fPIC
+CFLAGS = -Wall -Wextra -Werror -I./include -fPIC -std=c99
 # linker flags
 LDFLAGS = -shared
 SRCDIR = ./src
@@ -29,6 +29,14 @@ OBJECTS = $(patsubst $(SRCDIR)/%.c, $(OBJDIR)/%.o, $(SRCS))
 
 # location of the compiled binary file.
 LIBRARY = $(LIBDIR)/libutils.so
+
+
+
+# make target DEBUG=yes
+DEBUG ?= no
+ifeq ($(DEBUG),yes)
+	CFLAGS = -I./include -fPIC -std=c99
+endif
 
 
 
