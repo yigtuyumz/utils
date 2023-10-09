@@ -1,17 +1,17 @@
 #include "../include/utils.h"
 
 char *
-utils_strncpy(char * restrict dst, const char * restrict src, size_t len)
+utils_strncpy(char * restrict dest, const char * restrict src, size_t n)
 {
 	size_t i = 0;
-	while (i < len && *(src + i)) {
-		*(dst + i) = *(src + i);
+	while (i < n && *(src + i)) {
+		*(dest + i) = *(src + i);
 		i++;
 	}
-	while (i < len) {
-		*(dst + i) = 0;
+	while (i < n) {
+		*(dest + i) = 0;
 		i++;
 	}
 
-	return (dst);
+	return (dest);
 }

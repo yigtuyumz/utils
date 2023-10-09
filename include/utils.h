@@ -35,10 +35,10 @@ extern char *utils_strcat(char *dest, const char *src);
 extern int utils_strcmp(const char *a, const char *b);
 
 /*
- * `src` ile isaret edilen string ifadesini, `dst` ile isaret edilen string
+ * `src` ile isaret edilen string ifadesini, `dest` ile isaret edilen string
  * ifadesine kopyalar.
  */
-extern char *utils_strcpy(char * restrict dst, const char * restrict src);
+extern char *utils_strcpy(char * restrict dest, const char * restrict src);
 
 /*
  * String'in kac karakterden olustugunu dondurur.
@@ -62,14 +62,14 @@ extern int utils_strncmp(const char *a, const char *b, size_t n);
 
 /*
  * en fazla `n` adet karakter olmak uzere, `src` ile isaret edilen string
- * ifadesinin n adet karakterini `dst` ile isaret edilen string ifadesine
+ * ifadesinin n adet karakterini `dest` ile isaret edilen string ifadesine
  * kopyalar. eger `n` degeri src ifadesinin uzunlugundan kucuk ise,
- * dst icerisinde src ifadesinin uzunlugu kadar yer ayirip, n kadar karakteri
+ * dest icerisinde src ifadesinin uzunlugu kadar yer ayirip, n kadar karakteri
  * bu yere kopyaladiktan sonra kalan kisimi '\0' ile doldurur.
  * eger `n` degeri `src` stringinin uzunlugundan buyukse veya esit ise,
- * `src`'yi dst icerisine oldugu gibi kopyalar. (sonuna NULL ekleyerek)
+ * `src`'yi dest icerisine oldugu gibi kopyalar. (sonuna NULL ekleyerek)
  */
-extern char *utils_strncpy(char * restrict dst, const char * restrict src, size_t len);
+extern char *utils_strncpy(char * restrict dest, const char * restrict src, size_t n);
 
 /*
  * String'in n degerine kadar kac karakterden olustugunu dondurur.

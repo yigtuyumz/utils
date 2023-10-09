@@ -1,12 +1,12 @@
 #include "../include/utils.h"
-
+#include <time.h>
 char *
-utils_strcpy(char * restrict dst, const char * restrict src)
+utils_strcpy(char * restrict dest, const char * restrict src)
 {
 	while (*src) {
-		*(dst++) = *(src++);
+		*(dest++) = *(src++);
 	}
-	*dst = 0;
+	*(dest) = 0;
 
-	return (dst);
+	return (dest);
 }
