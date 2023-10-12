@@ -15,15 +15,21 @@
  */
 # ifdef UTILS_MACRO
 #  if UTILS_MACRO == 1
+// #   define ABS(X)           ((X) < 0x0 ? (-X) : (X))
+// #   define CLEARBIT(X, N)   ((X) & (~(1 << (N))))
 // #   define GETBIT(X, N)     (((X) >> (N)) & 0x1)
 // #   define SETBIT(X, N)     ((X) | (0x1 << (N)))
-// #   define CLEARBIT(X, N)   ((X) & (~(1 << (N))))
 // #   define TOGGLEBIT(X, N)  ((X) ^ (0x1 << (N)))
 
 /*
- * Bit uzunlugu `X` olan ve butun bit degerleri 1 olan ifadeyi dondurur.
-*/
-#   define BIT(X)           (0x1 << (X))
+ * `X` degerinin mutlak degerini alir.
+ */
+#   define ABS(X)           ((X) < 0x0 ? ((X) = (-X)) : ((X) = (X)))
+
+/*
+ * `X` degerinin `N`'inci bitini 0 yapar.
+ */
+#   define CLEARBIT(X, N)   ((X) = ((X) & (~(1 << (N)))))
 
 /*
  * X degerinin `N`'inci bitini elde eder.
@@ -34,11 +40,6 @@
  * X degerinin `N`'inci bitini 1 yapar.
  */
 #   define SETBIT(X, N)     ((X) = ((X) | (0x1 << (N))))
-
-/*
- * `X` degerinin `N`'inci bitini 0 yapar.
- */
-#   define CLEARBIT(X, N)   ((X) = ((X) & (~(1 << (N)))))
 
 /*
  * `X` degerinin `N`'inci bitinin degerini ters cevirir.

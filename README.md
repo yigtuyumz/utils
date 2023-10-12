@@ -7,12 +7,14 @@ _libutils_ is a dynamic C library of the functions which i am using mostly.
 	Contains header file(s).
 	```c
 	/* utils.h */
-	/* UTILS_MACRO == 1 */
-	#define    BIT(X)           (0x1 << (X))
+
+	/* if UTILS_MACRO */
+	#define    ABS(X)           ((X) < 0x0 ? ((X) = (-X)) : ((X) = (X)))
+	#define    CLEARBIT(X, N)   ((X) = ((X) & (~(1 << (N)))))
 	#define    GETBIT(X, N)     (((X) >> (N)) & 0x1)
 	#define    SETBIT(X, N)     ((X) = ((X) | (0x1 << (N))))
-	#define    CLEARBIT(X, N)   ((X) = ((X) & (~(1 << (N)))))
 	#define    TOGGLEBIT(X, N)  ((X) = ((X) ^ (0x1 << (N))))
+	/* endif UTILS_MACRO */
 
 	void
 	utils_putchar(int fd, char c);
@@ -49,6 +51,7 @@ _libutils_ is a dynamic C library of the functions which i am using mostly.
 
 	char *
 	utils_strstr(const char * restrict haystack, const char * restrict needle);
+	/* end of utils.h */
 	```
 
 	```makefile
