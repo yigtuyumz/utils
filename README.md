@@ -1,12 +1,19 @@
 # **Utilites for C**
 
-I created a dynamic C library by detecting the functions which i am using mostly.
+_libutils_ is a dynamic C library of the functions which i am using mostly.
 
 ## **_Folder Structure_**
 - ### *./include/*
-	Contains header files.
+	Contains header file(s).
 	```c
 	/* utils.h */
+	/* UTILS_MACRO == 1 */
+	#define    BIT(X)           (0x1 << (X))
+	#define    GETBIT(X, N)     (((X) >> (N)) & 0x1)
+	#define    SETBIT(X, N)     ((X) = ((X) | (0x1 << (N))))
+	#define    CLEARBIT(X, N)   ((X) = ((X) & (~(1 << (N)))))
+	#define    TOGGLEBIT(X, N)  ((X) = ((X) ^ (0x1 << (N))))
+
 	void
 	utils_putchar(int fd, char c);
 
@@ -55,5 +62,11 @@ I created a dynamic C library by detecting the functions which i am using mostly
 	The source files.
 	Contains source files named same as the function name.
 	
-**TODO** Produce only one object file instead of many files.
+**TODO's**
+- Produce only one object file instead of many files.
+- Create an extra header file for macros and constants **(?)**
+
+
+**_See Also_**
+- https://en.wikipedia.org/wiki/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm
 

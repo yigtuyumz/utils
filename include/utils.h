@@ -1,7 +1,51 @@
 #ifndef UTILS_H
 
 # define UTILS_H
+# define UTILS_MACRO 1
+
+/*
+ * 
+ */
 # include <unistd.h>
+
+
+/*
+ * Bu makro degeri tanimli ise ve degerine 1 atamasi yapildiysa, kutuphane
+ * makro degerleri tanimli olacaktir.
+ */
+# ifdef UTILS_MACRO
+#  if UTILS_MACRO == 1
+// #   define GETBIT(X, N)     (((X) >> (N)) & 0x1)
+// #   define SETBIT(X, N)     ((X) | (0x1 << (N)))
+// #   define CLEARBIT(X, N)   ((X) & (~(1 << (N))))
+// #   define TOGGLEBIT(X, N)  ((X) ^ (0x1 << (N)))
+
+/*
+ * Bit uzunlugu `X` olan ve butun bit degerleri 1 olan ifadeyi dondurur.
+*/
+#   define BIT(X)           (0x1 << (X))
+
+/*
+ * X degerinin `N`'inci bitini elde eder.
+ */
+#   define GETBIT(X, N)     (((X) >> (N)) & 0x1)
+
+/*
+ * X degerinin `N`'inci bitini 1 yapar.
+ */
+#   define SETBIT(X, N)     ((X) = ((X) | (0x1 << (N))))
+
+/*
+ * `X` degerinin `N`'inci bitini 0 yapar.
+ */
+#   define CLEARBIT(X, N)   ((X) = ((X) & (~(1 << (N)))))
+
+/*
+ * `X` degerinin `N`'inci bitinin degerini ters cevirir.
+ */
+#   define TOGGLEBIT(X, N)  ((X) = ((X) ^ (0x1 << (N))))
+#  endif
+# endif
 
 /*
  * Bir adet karakteri belirtilen dosya tanimlayicisina yazar.
