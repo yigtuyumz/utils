@@ -3,32 +3,28 @@
 int
 utils_atoi(const char *nbr)
 {
-	/* ilk karakter - ise negatif sonuc dondurur. */
-	/* ilk karakter + ise pozitif sonuc dondurur. */
-	/* error durumunda 0 donduruyor. */
-
-	int minus_count = 0;
-	int return_value = 0;
+	int sign = 0;
+	int nb = 0;
 
     while (((*nbr < 48)                          || \
             (*nbr > 57)) && (utils_isspace(*nbr) || \
             (*nbr == '-')                        || \
             (*nbr == '+'))) {
                 if (*nbr == '-') {
-                    minus_count++;
+                    sign++;
                 } else if (*nbr == '+') {
-                    minus_count--;
+                    sign--;
                 }
                 nbr++;
     }
 
 	while (*(nbr) && (*(nbr) >= 48 && *(nbr) <= 57)) {
-		return_value = (return_value * 10) + (*nbr - 48);
+		nb = (nb * 10) + (*nbr - 48);
 		nbr++;
 	}
 
-	if (minus_count > 0) {
-		return (-return_value);
+	if (sign > 0) {
+		return (-nb);
 	}
-	return (return_value);
+	return (nb);
 }
