@@ -29,7 +29,7 @@
 /*
  * `X` degerinin `N`'inci bitini 0 yapar.
  */
-#   define CLEARBIT(X, N)   ((X) = ((X) & (~(1 << (N)))))
+#   define CLEARBIT(X, N)   ((X) = ((X) & (~(0x1 << (N)))))
 
 /*
  * X degerinin `N`'inci bitini elde eder.
@@ -47,6 +47,27 @@
 #   define TOGGLEBIT(X, N)  ((X) = ((X) ^ (0x1 << (N))))
 #  endif
 # endif
+
+/*
+ * Bir string ifadesini, integer tipine donusturur.
+ */
+extern int utils_atoi(const char *nbr);
+
+/*
+ * Bir karakterin `white-space` karakter olmasi durumununda 1
+ * olmamasi durumunda 0 degerini dondurur.
+ * White-space karakterler:
+ * ' ', '\\t', '\\n', '\\v', '\\f', '\\r'
+ */
+extern int utils_isspace(int c);
+
+/*
+ * Bir karakterin `hexadecimal karakter` olmasi durumunda 1
+ * olmamasi durumunda 0 degerini dondurur.
+ * Hexadecimal karakterler:
+ * 0, 1, 2, 3, 4, 5, 6, 7, 8, 9,  a, b, c, d, e, f,  A, B, C, D, E, F 
+ */
+extern int utils_isxdigit(int c);
 
 /*
  * Bir adet karakteri belirtilen dosya tanimlayicisina yazar.

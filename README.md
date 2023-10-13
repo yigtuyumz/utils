@@ -10,11 +10,20 @@ _libutils_ is a dynamic C library of the functions which i am using mostly.
 
 	/* if UTILS_MACRO */
 	#define    ABS(X)           ((X) < 0x0 ? ((X) = (-X)) : ((X) = (X)))
-	#define    CLEARBIT(X, N)   ((X) = ((X) & (~(1 << (N)))))
+	#define    CLEARBIT(X, N)   ((X) = ((X) & (~(0x1 << (N)))))
 	#define    GETBIT(X, N)     (((X) >> (N)) & 0x1)
 	#define    SETBIT(X, N)     ((X) = ((X) | (0x1 << (N))))
 	#define    TOGGLEBIT(X, N)  ((X) = ((X) ^ (0x1 << (N))))
 	/* endif UTILS_MACRO */
+
+	int
+	utils_atoi(const char *nbr);
+
+	int
+	utils_isspace(int c);
+
+	int
+	utils_isxdigit(int c);
 
 	void
 	utils_putchar(int fd, char c);
@@ -64,12 +73,17 @@ _libutils_ is a dynamic C library of the functions which i am using mostly.
 - ### *./src/*
 	The source files.
 	Contains source files named same as the function name.
-	
+
+
 **TODO's**
 - Produce only one object file instead of many files.
 - Create an extra header file for macros and constants **(?)**
 
 
-**_See Also_**
-- https://en.wikipedia.org/wiki/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm
+**Tools**
+- [Binary to Decimal Converter](https://www.rapidtables.com/convert/number/binary-to-decimal.html)
+- [Word Sort](https://www.browserling.com/tools/word-sort)
 
+
+**_See Also_**
+- [Knuth–Morris–Pratt Algorithm](https://en.wikipedia.org/wiki/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm)
