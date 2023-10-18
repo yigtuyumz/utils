@@ -59,6 +59,9 @@ _libutils_ is a dynamic C library of the functions which i am using mostly.
 	utils_strnlen(const char *str, size_t n);
 
 	char *
+	utils_strnstr(const char *haystack, const char *needle, size_t n);
+
+	char *
 	utils_strstr(const char * restrict haystack, const char * restrict needle);
 	/* end of utils.h */
 	```
@@ -68,8 +71,8 @@ _libutils_ is a dynamic C library of the functions which i am using mostly.
 	FLAGS = -L/path/to/so/file -llibnamewithoutextension -Wl,-rpath=/path/to/so/file
 	```
 - ### *./tests/*
-	The testing environment.
-	All files related to test cases.
+	The test environment.
+	Contains files related to test cases.
 - ### *./src/*
 	The source files.
 	Contains source files named same as the function name.
