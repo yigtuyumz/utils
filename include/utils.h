@@ -141,10 +141,18 @@ extern char *utils_strncpy(char * restrict dest, const char * restrict src, size
 extern size_t utils_strnlen(const char *str, size_t n);
 
 /*
+ * `haystack` ile gosterilen string ifadesinin en fazla `n` adet karakteri icinde,
+ * `needle` ile gosterilen string ifadesini arar. eger eslesme var ise,
+ * eslesmenin basladigi noktayi gosteren isaretciyi dondurur. eger eslesme yok
+ * veya `n` degeri yeterince buyuk degil ise, NULL degeri dondurur.
+ */
+extern char *utils_strnstr(const char *haystack, const char *needle, size_t n);
+
+/*
  * `haystack` ile gosterilen string ifadesinde, `needle` ile gosterilen string
  * ifadesini arar. eger eslesme var ise, eslesmenin basladigi noktayi
  * gosteren isaretciyi dondurur. eger eslesme yok ise, NULL dondurur.
  */
-extern const char *utils_strstr(const char *haystack, const char *needle);
+extern char *utils_strstr(const char *haystack, const char *needle);
 
 #endif /* UTILS_H */

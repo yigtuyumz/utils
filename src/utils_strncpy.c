@@ -8,6 +8,7 @@ utils_strncpy(char * restrict dest, const char * restrict src, size_t n)
 		*(dest + i) = *(src + i);
 		i++;
 	}
+
 	while (i < n) {
 		*(dest + i) = 0;
 		i++;

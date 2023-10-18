@@ -1,15 +1,14 @@
 #include "../include/utils.h"
-#include <stdio.h>
 
-const char *
+char *
 utils_strstr(const char *haystack, const char *needle)
 {
+	if (*(needle) == 0) {
+		return ((char *) haystack);
+	}
+
 	char *h;
 	char *n;
-
-	if (*(needle) == 0) {
-		return (haystack);
-	}
 
 	n = (char *) needle;
 	while (*haystack) {
@@ -19,9 +18,8 @@ utils_strstr(const char *haystack, const char *needle)
 			needle++;
 		}	
 		if (*(needle) == 0) {
-			return ((const char *) h);
+			return (h);
 		}
-		printf("%s\n", h);
 		haystack = ++h;
 		needle = n;
 	}

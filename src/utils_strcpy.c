@@ -1,5 +1,5 @@
 #include "../include/utils.h"
-#include <time.h>
+
 char *
 utils_strcpy(char * restrict dest, const char * restrict src)
 {
