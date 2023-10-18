@@ -3,9 +3,7 @@
 # define UTILS_H
 # define UTILS_MACRO 1
 
-/*
- * 
- */
+
 # include <unistd.h>
 
 
@@ -147,6 +145,6 @@ extern size_t utils_strnlen(const char *str, size_t n);
  * ifadesini arar. eger eslesme var ise, eslesmenin basladigi noktayi
  * gosteren isaretciyi dondurur. eger eslesme yok ise, NULL dondurur.
  */
-extern char *utils_strstr(char *haystack,char *needle);
+extern const char *utils_strstr(const char *haystack, const char *needle);
 
 #endif /* UTILS_H */
