@@ -26,6 +26,9 @@ _libutils_ is a dynamic C library of the functions which i am using mostly.
 	utils_isxdigit(int c);
 
 	void *
+	utils_memcpy(void *dest, const void *src, size_t n);
+
+	void *
 	utils_memset(void *dest, int c, size_t n);
 
 	void
@@ -93,3 +96,6 @@ _libutils_ is a dynamic C library of the functions which i am using mostly.
 
 **_See Also_**
 - [Knuth–Morris–Pratt Algorithm](https://en.wikipedia.org/wiki/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm)
+- [Single Precision Floating-point Format](https://en.wikipedia.org/wiki/Single-precision_floating-point_format)
+- [Double Precision Floating-point Format](https://en.wikipedia.org/wiki/Double-precision_floating-point_format)
+- [Race Condition](https://en.wikipedia.org/wiki/Race_condition#In_software)

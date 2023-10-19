@@ -68,7 +68,14 @@ extern int utils_isspace(int c);
 extern int utils_isxdigit(int c);
 
 /*
+ * REWRITE DESCRIPTION
+ */
+extern void *utils_memcpy(void *dest, const void *src, size_t n);
+
+/*
  * `dest` ile gosterilen adresin `n` kadar byte'ina `c` degerini atar.
+ * `n` degeri 0'dan buyuk olmalidir.
+ * `n` degeri `dest`'in uzunlugundan buyuk olmamalidir.
  */
 extern void *utils_memset(void *dest, int c, size_t n);
 
