@@ -25,6 +25,9 @@ _libutils_ is a dynamic C library of the functions which i am using mostly.
 	int
 	utils_isxdigit(int c);
 
+	void *
+	utils_memset(void *dest, int c, size_t n);
+
 	void
 	utils_putchar(int fd, char c);
 

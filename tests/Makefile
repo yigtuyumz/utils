@@ -1,5 +1,5 @@
 CC = gcc
-LIBDIR = ../lib
+LIBDIR = $(realpath ../lib)
 OBJDIR = ./out
 CFLAGS = -Wall -Wextra -Werror -std=c99
 

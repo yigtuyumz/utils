@@ -68,6 +68,11 @@ extern int utils_isspace(int c);
 extern int utils_isxdigit(int c);
 
 /*
+ * `dest` ile gosterilen adresin `n` kadar byte'ina `c` degerini atar.
+ */
+extern void *utils_memset(void *dest, int c, size_t n);
+
+/*
  * Bir adet karakteri belirtilen dosya tanimlayicisina yazar.
  */
 extern void utils_putchar(int fd, char c);
