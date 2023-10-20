@@ -52,6 +52,12 @@
 extern int utils_atoi(const char *nbr);
 
 /*
+ * Ondalikli bir sayiyi, asagiya yuvarlar.
+ * 0x40000000 = 0b01000000000000000000000000000000
+ */
+extern double utils_floor(double x);
+
+/*
  * Bir karakterin `white-space` karakter olmasi durumununda 1
  * olmamasi durumunda 0 degerini dondurur.
  * White-space karakterler:
@@ -68,7 +74,7 @@ extern int utils_isspace(int c);
 extern int utils_isxdigit(int c);
 
 /*
- * REWRITE DESCRIPTION
+ * `src` ile gosterilen isaretcinin `n` byte'lik degerini `dest`'e kopyalar.
  */
 extern void *utils_memcpy(void *dest, const void *src, size_t n);
 
@@ -117,7 +123,7 @@ extern int utils_strcmp(const char *a, const char *b);
 extern char *utils_strcpy(char * restrict dest, const char * restrict src);
 
 /*
- * String'in kac karakterden olustugunu dondurur.
+ * `str` ile gosterilen string ifadesinin kac karakterden olustugunu dondurur.
  */
 extern size_t utils_strlen(const char *str);
 
@@ -148,7 +154,8 @@ extern int utils_strncmp(const char *a, const char *b, size_t n);
 extern char *utils_strncpy(char * restrict dest, const char * restrict src, size_t n);
 
 /*
- * String'in n degerine kadar kac karakterden olustugunu dondurur.
+ * `str` ile gosterilen string ifadesinin `n` degerine kadar kac karakterden
+ * olustugunu dondurur.
  */
 extern size_t utils_strnlen(const char *str, size_t n);
 
