@@ -44,7 +44,7 @@ _libutils_ is a dynamic C library of the functions which i am using mostly.
 	utils_putstr(int fd, const char *str);
 
 	char *
-	utils_strcat(char * restrict dest, const char * restrict src);
+	utils_strcat(char *dest, const char *src);
 
 	int
 	utils_strcmp(const char *a, const char *b);
@@ -56,22 +56,22 @@ _libutils_ is a dynamic C library of the functions which i am using mostly.
 	utils_strlen(const char *str);
 
 	char *
-	utils_strncat(char * restrict dest, const char * restrict src, size_t n);
+	utils_strncat(char *dest, const char *src, size_t n);
 
-	int
+	int 
 	utils_strncmp(const char *a, const char *b, size_t n);
 
 	char *
 	utils_strncpy(char * restrict dest, const char * restrict src, size_t n);
 
-	size_t
+	size_t 
 	utils_strnlen(const char *str, size_t n);
 
 	char *
 	utils_strnstr(const char *haystack, const char *needle, size_t n);
 
 	char *
-	utils_strstr(const char * restrict haystack, const char * restrict needle);
+	utils_strstr(const char *haystack, const char *needle);
 	/* end of utils.h */
 	```
 
