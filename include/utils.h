@@ -174,4 +174,10 @@ extern char *utils_strnstr(const char *haystack, const char *needle, size_t n);
  */
 extern char *utils_strstr(const char *haystack, const char *needle);
 
+/*
+ * `a` isaretcisi ile gosterilen adresin `n` byte'lik degerini, `b` isaretcisi
+ * ile gosterilen adresin degeri ile degistirir.
+ */
+extern void utils_swapn(void *a, void *b, size_t n);
+
 #endif /* UTILS_H */

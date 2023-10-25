@@ -72,6 +72,9 @@ _libutils_ is a dynamic C library of the functions which i am using mostly.
 
 	char *
 	utils_strstr(const char *haystack, const char *needle);
+
+	void
+	utils_swapn(void *a, void *b, size_t n);
 	/* end of utils.h */
 	```
 
