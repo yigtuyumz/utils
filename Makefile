@@ -11,8 +11,12 @@
 # names of all the prerequisites, with spaces between them.
 #
 
+ifeq ($(shell uname), FreeBSD)
+	CC = gcc13
+else
+	CC = gcc
+endif
 
-CC = gcc
 # Position Independent Code
 CFLAGS = -Wall -Wextra -Werror -I./include -fPIC -std=c99
 # linker flags
