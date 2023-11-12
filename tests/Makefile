@@ -1,4 +1,9 @@
-CC = gcc
+ifeq ($(shell uname), FreeBSD)
+	CC = gcc13
+else
+	CC = gcc
+endif
+
 LIBDIR = $(realpath ../lib)
 OBJDIR = ./out
 CFLAGS = -Wall -Wextra -Werror -std=c99

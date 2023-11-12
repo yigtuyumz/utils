@@ -5,7 +5,7 @@
 
 
 # include <unistd.h>
-
+# include <stdarg.h>
 
 /*
  * Bu makro degeri tanimli ise ve degerine 1 atamasi yapildiysa, kutuphane
@@ -46,6 +46,7 @@
 #  endif
 # endif
 
+__BEGIN_DECLS
 /*
  * Bir string ifadesini, integer tipine donusturur.
  */
@@ -179,5 +180,20 @@ extern char *utils_strstr(const char *haystack, const char *needle);
  * ile gosterilen adresin `n` byte'lik degeri ile degistirir.
  */
 extern void utils_swapn(void *a, void *b, size_t n);
+
+/*
+ * Degisken sayida arguman alabilen, dosya tanimlayicisina 'format' ile
+ * belirtilen ifadeyi yazan fonksiyondur.
+ * Gecerli formatlar:
+ *
+ * 'c' - character : utils_putchar() kullanarak ekrana belirtilen
+ * karakteri yazar.
+ * 's' - string    : utils_putstr() kullanarak ekrana belirtilen string
+ * ifadesini yazar.
+ * 'd' - integer   : utils_putnbr() kullanarak ekrana belirtilen int
+ * degerini yazar.
+ */
+extern void utils_vaput(int fd, char *fmt, ...);
+__END_DECLS
 
 #endif /* UTILS_H */
