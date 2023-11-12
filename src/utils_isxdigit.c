@@ -1,5 +1,3 @@
-#include "../include/utils.h"
-
 int
 utils_isxdigit(int c)
 {

@@ -76,8 +76,8 @@ _libutils_ is a dynamic C library of the functions which i am using mostly.
 	void
 	utils_swapn(void *a, void *b, size_t n);
 
-    void
-    utils_vaput(int fd, char *fmt, ...);
+	void
+	utils_vaput(int fd, char *fmt, ...);
 	/* end of utils.h */
 	```
 

@@ -1,5 +1,3 @@
-#include "../include/utils.h"
-
 char *
 utils_strcpy(char * restrict dest, const char * restrict src)
 {
