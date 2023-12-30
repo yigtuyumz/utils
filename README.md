@@ -19,6 +19,9 @@ _libutils_ is a dynamic C library of the functions which i am using mostly.
 	int
 	utils_atoi(const char *nbr);
 
+	void
+	utils_bzero(void *s, size_t n);
+
 	double
 	utils_floor(double x);
 

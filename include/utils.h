@@ -53,6 +53,12 @@ __BEGIN_DECLS
 extern int utils_atoi(const char *nbr);
 
 /*
+ * `s` ile gosterilen adresin `n` kadar byte'ina sifir degerini yazar.
+ * Eger `n` degeri sifira esit ise, bu fonksiyon hicbir sey yapmaz.
+ */
+extern void utils_bzero(void *s, size_t n);
+
+/*
  * Ondalikli bir sayiyi, asagiya yuvarlar.
  * 0x40000000 = 0b01000000000000000000000000000000
  */
