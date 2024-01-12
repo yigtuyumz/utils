@@ -115,6 +115,13 @@ extern void utils_putstr(int fd, const char *str);
 extern char *utils_strcat(char *dest, const char *src);
 
 /*
+ * `str` isaretcisi ile gosterilen string ifadesinde `val` degeri ile eslesen
+ * ilk karakterin adresini dondurur.
+ * eger eslesme yoksa `NULL` degerini dondurur.
+ */
+extern char *utils_strchr(const char *str, int val);
+
+/*
  * `a` isaretcisiyle gosterilen string ifadesini
  * `b` isaretcisiyle gosterilen string ifadesi ile karsilastirir.
  * iki string ifadesinin ASCII farkini dondurur. dolayisiyla karsilastirilan
@@ -173,6 +180,13 @@ extern size_t utils_strnlen(const char *str, size_t n);
  * veya `n` degeri yeterince buyuk degil ise, NULL degeri dondurur.
  */
 extern char *utils_strnstr(const char *haystack, const char *needle, size_t n);
+
+/*
+ * `str` isaretcisi ile gosterilen string ifadesinde `val` degeri ile eslesen
+ * son karakterin adresini dondurur.
+ * eger eslesme yoksa `NULL` degerini dondurur.
+ */
+extern char *utils_strrchr(const char *str, int val);
 
 /*
  * `haystack` ile gosterilen string ifadesinde, `needle` ile gosterilen string
