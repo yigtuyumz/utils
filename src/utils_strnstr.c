@@ -17,7 +17,7 @@ utils_strnstr(const char *haystack, const char *needle, size_t n)
 		while (*(haystack) && *(haystack) == *(needle)) {
 			haystack++;
 			needle++;
-		}	
+		}
 		if (*(needle) == 0) {
 			return (a);
 		}
