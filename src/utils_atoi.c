@@ -3,8 +3,8 @@
 int
 utils_atoi(const char *nbr)
 {
-	int sign = 0;
-	int nb = 0;
+    int sign = 0;
+    int nb = 0;
 
     while (((*nbr < 48)                          || \
             (*nbr > 57)) && (utils_isspace(*nbr) || \
@@ -18,13 +18,13 @@ utils_atoi(const char *nbr)
                 nbr++;
     }
 
-	while (*(nbr) && (*(nbr) >= 48 && *(nbr) <= 57)) {
-		nb = (nb * 10) + (*nbr - 48);
-		nbr++;
-	}
+    while (*(nbr) && (*(nbr) >= 48 && *(nbr) <= 57)) {
+        nb = (nb * 10) + (*nbr - 48);
+        nbr++;
+    }
 
-	if (sign > 0) {
-		return (-nb);
-	}
-	return (nb);
+    if (sign > 0) {
+        return (-nb);
+    }
+    return (nb);
 }

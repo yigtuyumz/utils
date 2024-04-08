@@ -3,5 +3,5 @@
 void
 utils_putchar(int fd, char c)
 {
-	write(fd, &c, 1);
+    write(fd, &c, 1);
 }

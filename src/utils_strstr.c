@@ -3,26 +3,26 @@
 char *
 utils_strstr(const char *haystack, const char *needle)
 {
-	if (*(needle) == 0) {
-		return ((char *) haystack);
-	}
+    if (*(needle) == 0) {
+        return ((char *) haystack);
+    }
 
-	char *h;
-	char *n;
+    char *h;
+    char *n;
 
-	n = (char *) needle;
-	while (*haystack) {
-		h = (char *) haystack;
-		while (*(haystack) && *(haystack) == *(needle)) {
-			haystack++;
-			needle++;
-		}
-		if (*(needle) == 0) {
-			return (h);
-		}
-		haystack = ++h;
-		needle = n;
-	}
+    n = (char *) needle;
+    while (*haystack) {
+        h = (char *) haystack;
+        while (*(haystack) && *(haystack) == *(needle)) {
+            haystack++;
+            needle++;
+        }
+        if (*(needle) == 0) {
+            return (h);
+        }
+        haystack = ++h;
+        needle = n;
+    }
 
-	return (NULL);
+    return (NULL);
 }

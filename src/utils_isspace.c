@@ -9,5 +9,5 @@ utils_isspace(int c)
         (c == '\r')) {
                     return (1);
                 }
-	return (0);
+    return (0);
 }

@@ -6,5 +6,5 @@ utils_isxdigit(int c)
         (c >= 65 && c <= 70)) {
                 return (1);
             }
-	return (0);
+    return (0);
 }
