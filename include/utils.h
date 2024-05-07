@@ -32,7 +32,7 @@
 /*
  * X degerinin `N`'inci bitini elde eder.
  */
-#   define GETBIT(X, N)     (((X) >> (N)) & 0x1)
+#   define GETBIT(X, N)     (((X) >> (N - 1)) & 0x1)
 
 /*
  * X degerinin `N`'inci bitini 1 yapar.
