@@ -1,18 +1,19 @@
 #ifndef UTILS_H
 
 # define UTILS_H
-# define UTILS_MACRO 1
+# define _UTILS_MACRO 1
 
 
 # include <unistd.h>
 
 
 /*
- * Bu makro degeri tanimli ise ve degerine 1 atamasi yapildiysa, kutuphane
- * makro degerleri tanimli olacaktir.
+ * _UTILS_MACRO tanimli ise ve degerine 1 atamasi yapildiysa, bitwise
+ * makro ifadeleri tanimli olacaktir. `N` degeri, sifirinci indexten baslar ve
+ * LE (Little endian) mantigiyla calisir.
  */
-# ifdef UTILS_MACRO
-#  if UTILS_MACRO == 1
+# ifdef _UTILS_MACRO
+#  if _UTILS_MACRO == 1
 // #   define ABS(X)           ((X) < 0x0 ? (-X) : (X))
 // #   define CLEARBIT(X, N)   ((X) & (~(1 << (N))))
 // #   define GETBIT(X, N)     (((X) >> (N)) & 0x1)
@@ -32,7 +33,7 @@
 /*
  * X degerinin `N`'inci bitini elde eder.
  */
-#   define GETBIT(X, N)     (((X) >> (N - 1)) & 0x1)
+#   define GETBIT(X, N)     (((X) >> (N)) & 0x1)
 
 /*
  * X degerinin `N`'inci bitini 1 yapar.
@@ -43,8 +44,8 @@
  * `X` degerinin `N`'inci bitinin degerini ters cevirir.
  */
 #   define TOGGLEBIT(X, N)  ((X) = ((X) ^ (0x1 << (N))))
-#  endif
-# endif
+#  endif /* _UTILS_MACRO == 1 */
+# endif /* _UTILS_MACRO */
 
 __BEGIN_DECLS
 /*
@@ -165,7 +166,8 @@ extern int utils_strncmp(const char *a, const char *b, size_t n);
  * eger `n` degeri `src` stringinin uzunlugundan buyukse veya esit ise,
  * `src`'yi dest icerisine oldugu gibi kopyalar. (sonuna NULL ekleyerek)
  */
-extern char *utils_strncpy(char * restrict dest, const char * restrict src, size_t n);
+extern char *utils_strncpy(char * restrict dest,
+        const char * restrict src, size_t n);
 
 /*
  * `str` ile gosterilen string ifadesinin `n` degerine kadar kac karakterden
@@ -174,10 +176,10 @@ extern char *utils_strncpy(char * restrict dest, const char * restrict src, size
 extern size_t utils_strnlen(const char *str, size_t n);
 
 /*
- * `haystack` ile gosterilen string ifadesinin en fazla `n` adet karakteri icinde,
- * `needle` ile gosterilen string ifadesini arar. eger eslesme var ise,
- * eslesmenin basladigi noktayi gosteren isaretciyi dondurur. eger eslesme yok
- * veya `n` degeri yeterince buyuk degil ise, NULL degeri dondurur.
+ * `haystack` ile gosterilen string ifadesinin en fazla `n` adet karakteri
+ * icinde, `needle` ile gosterilen string ifadesini arar. eger eslesme var
+ * ise, eslesmenin basladigi noktayi gosteren isaretciyi dondurur. eger eslesme
+ * yok veya `n` degeri yeterince buyuk degil ise, NULL degeri dondurur.
  */
 extern char *utils_strnstr(const char *haystack, const char *needle, size_t n);
 

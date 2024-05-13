@@ -11,3 +11,4 @@ utils_strchr(const char *str, int val)
     }
     return (NULL);
 }
+

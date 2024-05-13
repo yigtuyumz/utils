@@ -12,3 +12,4 @@ utils_strrchr(const char *str, int val)
     }
     return (s);
 }
+

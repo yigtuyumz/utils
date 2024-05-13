@@ -5,3 +5,4 @@ utils_putchar(int fd, char c)
 {
     write(fd, &c, 1);
 }
+

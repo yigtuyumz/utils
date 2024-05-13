@@ -16,3 +16,4 @@ utils_strncpy(char * restrict dest, const char * restrict src, size_t n)
 
     return (dest);
 }
+

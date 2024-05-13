@@ -7,3 +7,4 @@ utils_bzero(void *s, size_t n)
         *((unsigned char *)s + n) = 0;
     }
 }
+

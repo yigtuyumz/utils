@@ -10,3 +10,4 @@ utils_strlen(const char *str)
 
     return (len);
 }
+

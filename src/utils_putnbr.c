@@ -19,3 +19,4 @@ utils_putnbr(int fd, int nb)
         utils_putchar(fd, (nb + 48));
     }
 }
+

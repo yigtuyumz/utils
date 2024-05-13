@@ -14,3 +14,4 @@ utils_strncmp(const char *a, const char *b, size_t n)
 
     return (*(a + i) - *(b + i));
 }
+

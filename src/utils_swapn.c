@@ -9,3 +9,4 @@ utils_swapn(void *a, void *b, size_t n)
         *((unsigned char *) a + n) = *((unsigned char *) a + n) ^ *((unsigned char *) b + n);
     }
 }
+

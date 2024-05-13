@@ -14,3 +14,4 @@ utils_strncat(char *dest, const char *src, size_t n)
     *(dest + i + j) = 0;
     return (dest);
 }
+
