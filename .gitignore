@@ -6,3 +6,5 @@
 !/tests/README.md
 /tests/out/
 *.txt
+*.swp
+

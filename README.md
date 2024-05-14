@@ -11,7 +11,7 @@ _libutils_ is a dynamic C library of the functions which i am using mostly.
 	/* if UTILS_MACRO */
 	#define    ABS(X)           ((X) < 0x0 ? ((X) = (-X)) : ((X) = (X)))
 	#define    CLEARBIT(X, N)   ((X) = ((X) & (~(0x1 << (N)))))
-	#define    GETBIT(X, N)     (((X) >> (N - 1)) & 0x1)
+	#define    GETBIT(X, N)     (((X) >> (N)) & 0x1)
 	#define    SETBIT(X, N)     ((X) = ((X) | (0x1 << (N))))
 	#define    TOGGLEBIT(X, N)  ((X) = ((X) ^ (0x1 << (N))))
 	/* endif UTILS_MACRO */
