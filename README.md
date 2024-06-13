@@ -9,11 +9,11 @@ _libutils_ is a dynamic C library of the functions which i am using mostly.
 	/* utils.h */
 
 	/* if UTILS_MACRO */
-	#define    ABS(X)           ((X) < 0x0 ? ((X) = (-X)) : ((X) = (X)))
-	#define    CLEARBIT(X, N)   ((X) = ((X) & (~(0x1 << (N)))))
-	#define    GETBIT(X, N)     (((X) >> (N)) & 0x1)
-	#define    SETBIT(X, N)     ((X) = ((X) | (0x1 << (N))))
-	#define    TOGGLEBIT(X, N)  ((X) = ((X) ^ (0x1 << (N))))
+	#define    ABS(X)           ((X) < 0x00 ? ((X) = (-X)) : ((X) = (X)))
+	#define    CLEARBIT(X, N)   ((X) = ((X) & (~(0x01 << (N)))))
+	#define    GETBIT(X, N)     (((X) >> (N)) & 0x01)
+	#define    SETBIT(X, N)     ((X) = ((X) | (0x01 << (N))))
+	#define    TOGGLEBIT(X, N)  ((X) = ((X) ^ (0x01 << (N))))
 	/* endif UTILS_MACRO */
 
 	int
@@ -24,6 +24,9 @@ _libutils_ is a dynamic C library of the functions which i am using mostly.
 
 	double
 	utils_floor(double x);
+
+	int
+	utils_isprime(unsigned int nb);
 
 	int
 	utils_isspace(int c);
@@ -95,10 +98,9 @@ _libutils_ is a dynamic C library of the functions which i am using mostly.
 	FLAGS = -L/path/to/so/file -llibnamewithoutextension -Wl,-rpath=/path/to/so/file
 	```
 - ### *./tests/*
-	The test environment.
+	Test environment.
 	Contains files related to test cases.
 - ### *./src/*
-	The source files.
 	Contains source files named same as the function name.
 
 
@@ -117,3 +119,5 @@ _libutils_ is a dynamic C library of the functions which i am using mostly.
 - [Single Precision Floating-point Format](https://en.wikipedia.org/wiki/Single-precision_floating-point_format)
 - [Double Precision Floating-point Format](https://en.wikipedia.org/wiki/Double-precision_floating-point_format)
 - [Race Condition](https://en.wikipedia.org/wiki/Race_condition#In_software)
+- [Prime Numbers 6k+-1 Theorem](https://crypto.stackexchange.com/a/72352)
+

@@ -9,41 +9,36 @@
 
 /*
  * _UTILS_MACRO tanimli ise ve degerine 1 atamasi yapildiysa, bitwise
- * makro ifadeleri tanimli olacaktir. `N` degeri, sifirinci indexten baslar ve
- * LE (Little endian) mantigiyla calisir.
+ * makro ifadeleri tanimli olacaktir. `N` degeri bitin indexini belirtir.
+ * Dolayisiyla sifirinci index en sagdaki bit'i elde eder.
  */
 # ifdef _UTILS_MACRO
 #  if _UTILS_MACRO == 1
-// #   define ABS(X)           ((X) < 0x0 ? (-X) : (X))
-// #   define CLEARBIT(X, N)   ((X) & (~(1 << (N))))
-// #   define GETBIT(X, N)     (((X) >> (N)) & 0x1)
-// #   define SETBIT(X, N)     ((X) | (0x1 << (N)))
-// #   define TOGGLEBIT(X, N)  ((X) ^ (0x1 << (N)))
 
 /*
- * `X` degerinin mutlak degerini alir.
+ * `X` degerini `X`in mutlak degerine esitler.
  */
-#   define ABS(X)           ((X) < 0x0 ? ((X) = (-X)) : ((X) = (X)))
+#   define ABS(X)           ((X) < 0x00 ? ((X) = (-X)) : ((X) = (X)))
 
 /*
  * `X` degerinin `N`'inci bitini 0 yapar.
  */
-#   define CLEARBIT(X, N)   ((X) = ((X) & (~(0x1 << (N)))))
+#   define CLEARBIT(X, N)   ((X) = ((X) & (~(0x01 << (N)))))
 
 /*
  * X degerinin `N`'inci bitini elde eder.
  */
-#   define GETBIT(X, N)     (((X) >> (N)) & 0x1)
+#   define GETBIT(X, N)     (((X) >> (N)) & 0x01)
 
 /*
  * X degerinin `N`'inci bitini 1 yapar.
  */
-#   define SETBIT(X, N)     ((X) = ((X) | (0x1 << (N))))
+#   define SETBIT(X, N)     ((X) = ((X) | (0x01 << (N))))
 
 /*
  * `X` degerinin `N`'inci bitinin degerini ters cevirir.
  */
-#   define TOGGLEBIT(X, N)  ((X) = ((X) ^ (0x1 << (N))))
+#   define TOGGLEBIT(X, N)  ((X) = ((X) ^ (0x01 << (N))))
 #  endif /* _UTILS_MACRO == 1 */
 # endif /* _UTILS_MACRO */
 
@@ -64,6 +59,12 @@ extern void utils_bzero(void *s, size_t n);
  * 0x40000000 = 0b01000000000000000000000000000000
  */
 extern double utils_floor(double x);
+
+/*
+ * Bir sayinin asal olup olmama durumunu 6k+-1 teoremini kullanarak denetler.
+ * Eger sayi asal ise `1` degil ise `0` degerini dondurur.
+ */
+extern int utils_isprime(unsigned int nb);
 
 /*
  * Bir karakterin `white-space` karakter olmasi durumununda 1
@@ -208,11 +209,11 @@ extern void utils_swapn(void *a, void *b, size_t n);
  * belirtilen ifadeyi yazan fonksiyon.
  * Gecerli formatlar:
  *
- * '%c' - character : utils_putchar() kullanarak ekrana belirtilen
+ * `%c` - character : utils_putchar() kullanarak ekrana belirtilen
  * karakteri yazar.
- * '%s' - string    : utils_putstr() kullanarak ekrana belirtilen string
+ * `%s` - string    : utils_putstr() kullanarak ekrana belirtilen string
  * ifadesini yazar.
- * '%d' - integer   : utils_putnbr() kullanarak ekrana belirtilen int
+ * `%d` - integer   : utils_putnbr() kullanarak ekrana belirtilen int
  * degerini yazar.
  */
 extern void utils_vaput(int fd, char *fmt, ...);
