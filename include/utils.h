@@ -139,6 +139,13 @@ extern int utils_strcmp(const char *a, const char *b);
 extern char *utils_strcpy(char * restrict dest, const char * restrict src);
 
 /*
+ * `str` ile isaret edilen string ifadesini, yeni bir alana kopyalar. kopyalanan
+ * yeni ifade, '\0' ile sonlandirilir. eger yer ayirma islemi basarisiz olursa
+ * `NULL` degeri dondurur.
+ */
+extern char *utils_strdup(const char *str);
+
+/*
  * `str` ile gosterilen string ifadesinin kac karakterden olustugunu dondurur.
  */
 extern size_t utils_strlen(const char *str);
@@ -169,6 +176,15 @@ extern int utils_strncmp(const char *a, const char *b, size_t n);
  */
 extern char *utils_strncpy(char * restrict dest,
         const char * restrict src, size_t n);
+
+/*
+ * `str` isaretcisi ile gosterilen ifadenin en fazla `n` adet karakterini yeni
+ * bir alana kopyalar. eger `n` ifadesi, `str` ifadesinin uzunlugundan buyukse,
+ * `str` ifadesinin butun karakterlerini kopyalar. kopyalanan yeni ifade, '\0'
+ * ile sonlandirilir. eger yer ayirma islemi basarisiz olursa `NULL` degeri
+ * dondurur.
+ */
+extern char *utils_strndup(const char *str, size_t len);
 
 /*
  * `str` ile gosterilen string ifadesinin `n` degerine kadar kac karakterden

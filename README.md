@@ -8,13 +8,13 @@ _libutils_ is a dynamic C library of the functions which i am using mostly.
 	```c
 	/* utils.h */
 
-	/* if UTILS_MACRO */
+	/* if _UTILS_MACRO */
 	#define    ABS(X)           ((X) < 0x00 ? ((X) = (-X)) : ((X) = (X)))
 	#define    CLEARBIT(X, N)   ((X) = ((X) & (~(0x01 << (N)))))
 	#define    GETBIT(X, N)     (((X) >> (N)) & 0x01)
 	#define    SETBIT(X, N)     ((X) = ((X) | (0x01 << (N))))
 	#define    TOGGLEBIT(X, N)  ((X) = ((X) ^ (0x01 << (N))))
-	/* endif UTILS_MACRO */
+	/* endif _UTILS_MACRO */
 
 	int
 	utils_atoi(const char *nbr);
@@ -61,6 +61,9 @@ _libutils_ is a dynamic C library of the functions which i am using mostly.
 	char *
 	utils_strcpy(char * restrict dest, const char * restrict src);
 
+	char *
+	utils_strdup(const char *str);
+
 	size_t
 	utils_strlen(const char *str);
 
@@ -72,6 +75,9 @@ _libutils_ is a dynamic C library of the functions which i am using mostly.
 
 	char *
 	utils_strncpy(char * restrict dest, const char * restrict src, size_t n);
+
+	char *
+	utils_strndup(const char *str, size_t len);
 
 	size_t
 	utils_strnlen(const char *str, size_t n);
