@@ -111,7 +111,7 @@ _libutils_ is a dynamic C library of the functions which i am using mostly.
 
 
 **TODO's**
-- Produce only one object file instead of many files.
+- Improve infrastructure of autotools build system. (consider re-write configure.ac and Makefile.am files)
 - Create an extra header file for macros and constants **(?)**
 
 
