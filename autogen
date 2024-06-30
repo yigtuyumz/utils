@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+echo '' > autogen_log
+
+libtoolize --force                     >> autogen_log
+aclocal                                >> autogen_log
+autoheader                             >> autogen_log
+automake --force-missing --add-missing >> autogen_log
+autoconf                               >> autogen_log
+./configure                            >> autogen_log
+automake                               >> autogen_log
+
