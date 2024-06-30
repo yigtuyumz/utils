@@ -49,6 +49,10 @@ Makefile
 /tests/out/
 *.txt
 *.swp
+*.o
+*.lo
 autogen_log
 config.h
 libtool
+/.libs
+*.la
