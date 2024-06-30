@@ -13,7 +13,7 @@ utils_isprime(unsigned int nb)
         return (0);
     }
 
-    int i = 5;
+    unsigned int i = 5;
 
     while ((i * i <= nb) && (nb % i != 0 && nb % (i + 2) != 0)) {
         i += 6;
