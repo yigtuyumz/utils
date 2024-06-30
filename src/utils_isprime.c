@@ -1,6 +1,10 @@
 int
 utils_isprime(unsigned int nb)
 {
+/*
+        FIX ME!
+
+
     if (nb <= 1) {
         return (0);
     }
@@ -19,5 +23,7 @@ utils_isprime(unsigned int nb)
         i += 6;
     }
     return ((i * i) <= nb);
+*/
+    return (-1); // FIX ME!
 }
 
