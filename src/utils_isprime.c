@@ -1,10 +1,6 @@
 int
 utils_isprime(unsigned int nb)
 {
-/*
-        FIX ME!
-
-
     if (nb <= 1) {
         return (0);
     }
@@ -19,11 +15,14 @@ utils_isprime(unsigned int nb)
 
     unsigned int i = 5;
 
-    while ((i * i <= nb) && (nb % i != 0 && nb % (i + 2) != 0)) {
+    while ((i * i) <= nb) {
+        if (((nb % i) == 0) || (nb % (i + 2) == 0)) {
+            return (0);
+        }
+
         i += 6;
     }
-    return ((i * i) <= nb);
-*/
-    return (-1); // FIX ME!
+
+    return (1);
 }
 
