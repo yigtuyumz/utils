@@ -83,6 +83,13 @@ extern int utils_isspace(int c);
 extern int utils_isxdigit(int c);
 
 /*
+ * `nb` sayisini stringe cevirir.
+ * Bu string ifadesi statik olarak 21 byte kullanir. Bunun sebebi kodun daha
+ * optimize olmasidir.
+ */
+extern char *utils_itoa(int nb);
+
+/*
  * `src` ile gosterilen isaretcinin `n` byte'lik degerini `dest`'e kopyalar.
  */
 extern void *utils_memcpy(void *dest, const void *src, size_t n);
