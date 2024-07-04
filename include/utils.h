@@ -50,7 +50,7 @@ extern int utils_atoi(const char *nbr);
 
 /*
  * `s` ile gosterilen adresin `n` kadar byte'ina sifir degerini yazar.
- * Eger `n` degeri sifira esit ise, bu fonksiyon hicbir sey yapmaz.
+ * - `n` degeri sifira esit ise, bu fonksiyon hicbir sey yapmaz.
  */
 extern void utils_bzero(void *s, size_t n);
 
@@ -62,7 +62,7 @@ extern double utils_floor(double x);
 
 /*
  * Bir sayinin asal olup olmama durumunu 6k+-1 teoremini kullanarak denetler.
- * Eger sayi asal ise `1` degil ise `0` degerini dondurur.
+ * - sayi asal ise `1` degil ise `0` degerini dondurur.
  */
 extern int utils_isprime(unsigned int nb);
 
@@ -126,7 +126,7 @@ extern char *utils_strcat(char *dest, const char *src);
 /*
  * `str` isaretcisi ile gosterilen string ifadesinde `val` degeri ile eslesen
  * ilk karakterin adresini dondurur.
- * eger eslesme yoksa `NULL` degerini dondurur.
+ * - eslesme yoksa `NULL` degerini dondurur.
  */
 extern char *utils_strchr(const char *str, int val);
 
@@ -147,8 +147,8 @@ extern char *utils_strcpy(char * restrict dest, const char * restrict src);
 
 /*
  * `str` ile isaret edilen string ifadesini, yeni bir alana kopyalar. kopyalanan
- * yeni ifade, '\0' ile sonlandirilir. eger yer ayirma islemi basarisiz olursa
- * `NULL` degeri dondurur.
+ * yeni ifade, '\0' ile sonlandirilir.
+ * - malloc ile yer ayirma islemi basarisiz olursa `NULL` degeri dondurur.
  */
 extern char *utils_strdup(const char *str);
 
@@ -175,10 +175,11 @@ extern int utils_strncmp(const char *a, const char *b, size_t n);
 /*
  * en fazla `n` adet karakter olmak uzere, `src` ile isaret edilen string
  * ifadesinin n adet karakterini `dest` ile isaret edilen string ifadesine
- * kopyalar. eger `n` degeri src ifadesinin uzunlugundan kucuk ise,
- * dest icerisinde src ifadesinin uzunlugu kadar yer ayirip, n kadar karakteri
- * bu yere kopyaladiktan sonra kalan kisimi '\0' ile doldurur.
- * eger `n` degeri `src` stringinin uzunlugundan buyukse veya esit ise,
+ * kopyalar.
+ * - `n` degeri src ifadesinin uzunlugundan kucuk ise, dest icerisinde src
+ * ifadesinin uzunlugu kadar yer ayirip, n kadar karakteri bu yere kopyaladiktan
+ * sonra kalan kisimi '\0' ile doldurur.
+ * - `n` degeri `src` stringinin uzunlugundan buyukse veya esit ise,
  * `src`'yi dest icerisine oldugu gibi kopyalar. (sonuna NULL ekleyerek)
  */
 extern char *utils_strncpy(char * restrict dest,
@@ -186,10 +187,11 @@ extern char *utils_strncpy(char * restrict dest,
 
 /*
  * `str` isaretcisi ile gosterilen ifadenin en fazla `n` adet karakterini yeni
- * bir alana kopyalar. eger `n` ifadesi, `str` ifadesinin uzunlugundan buyukse,
- * `str` ifadesinin butun karakterlerini kopyalar. kopyalanan yeni ifade, '\0'
- * ile sonlandirilir. eger yer ayirma islemi basarisiz olursa `NULL` degeri
- * dondurur.
+ * bir alana kopyalar.
+ * - `n` ifadesi, `str` ifadesinin uzunlugundan buyukse, `str` ifadesinin butun
+ * karakterlerini kopyalar. kopyalanan yeni ifade, '\0' ile sonlandirilir.
+ * - yer ayirma islemi basarisiz olursa `NULL` degeri dondurur.
+ * - `len` sifira esitse `NULL` dondurur.
  */
 extern char *utils_strndup(const char *str, size_t len);
 
@@ -200,24 +202,25 @@ extern char *utils_strndup(const char *str, size_t len);
 extern size_t utils_strnlen(const char *str, size_t n);
 
 /*
- * `haystack` ile gosterilen string ifadesinin en fazla `n` adet karakteri
- * icinde, `needle` ile gosterilen string ifadesini arar. eger eslesme var
- * ise, eslesmenin basladigi noktayi gosteren isaretciyi dondurur. eger eslesme
- * yok veya `n` degeri yeterince buyuk degil ise, NULL degeri dondurur.
+ * `haystack` ile isaret edilen string ifadesinin en fazla `n` adet karakterinde
+ * `needle` ile isaret edilen string ifadesini arar.
+ * - eslesme var ise, eslesmenin basladigi noktayi gosteren isaretciyi dondurur.
+ * - eslesmeyok veya `n` degeri yeterince buyuk degil ise, NULL degeri dondurur.
  */
 extern char *utils_strnstr(const char *haystack, const char *needle, size_t n);
 
 /*
  * `str` isaretcisi ile gosterilen string ifadesinde `val` degeri ile eslesen
  * son karakterin adresini dondurur.
- * eger eslesme yoksa `NULL` degerini dondurur.
+ * - eslesme yok ise `NULL` degerini dondurur.
  */
 extern char *utils_strrchr(const char *str, int val);
 
 /*
  * `haystack` ile gosterilen string ifadesinde, `needle` ile gosterilen string
- * ifadesini arar. eger eslesme var ise, eslesmenin basladigi noktayi
- * gosteren isaretciyi dondurur. eger eslesme yok ise, NULL dondurur.
+ * ifadesini arar. 
+ * - eslesme var ise, eslesmenin basladigi noktayi gosteren isaretciyi dondurur.
+ * - eslesme yok ise, NULL dondurur.
  */
 extern char *utils_strstr(const char *haystack, const char *needle);
 
@@ -232,11 +235,11 @@ extern void utils_swapn(void *a, void *b, size_t n);
  * belirtilen ifadeyi yazan fonksiyon.
  * Gecerli formatlar:
  *
- * `%c` - character : utils_putchar() kullanarak ekrana belirtilen
+ * - `%c` - character : utils_putchar() kullanarak ekrana belirtilen
  * karakteri yazar.
- * `%s` - string    : utils_putstr() kullanarak ekrana belirtilen string
+ * - `%s` - string    : utils_putstr() kullanarak ekrana belirtilen string
  * ifadesini yazar.
- * `%d` - integer   : utils_putnbr() kullanarak ekrana belirtilen int
+ * - `%d` - integer   : utils_putnbr() kullanarak ekrana belirtilen int
  * degerini yazar.
  */
 extern void utils_vaput(int fd, char *fmt, ...);
