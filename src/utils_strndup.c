@@ -4,10 +4,6 @@
 char *
 utils_strndup(const char *str, size_t len)
 {
-    if (len == 0) {
-        return (NULL);
-    }
-
     char *ret_str = (char *) malloc(utils_strnlen(str, len) + 1);
 
     if (ret_str == NULL) {

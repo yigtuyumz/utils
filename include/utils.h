@@ -190,8 +190,7 @@ extern char *utils_strncpy(char * restrict dest,
  * bir alana kopyalar.
  * - `n` ifadesi, `str` ifadesinin uzunlugundan buyukse, `str` ifadesinin butun
  * karakterlerini kopyalar. kopyalanan yeni ifade, '\0' ile sonlandirilir.
- * - yer ayirma islemi basarisiz olursa `NULL` degeri dondurur.
- * - `len` sifira esitse `NULL` dondurur.
+ * - malloc ile yer ayirma islemi basarisiz olursa `NULL` degeri dondurur.
  */
 extern char *utils_strndup(const char *str, size_t len);
 
