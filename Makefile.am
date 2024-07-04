@@ -30,6 +30,7 @@ libutils_la_SOURCES = \
 	src/utils_isprime.c \
 	src/utils_isspace.c \
 	src/utils_isxdigit.c \
+	src/utils_itoa.c \
 	src/utils_memcpy.c \
 	src/utils_memset.c \
 	src/utils_putchar.c \
