@@ -2,6 +2,38 @@
 #include <stdarg.h>
 
 void
+utils_putchar(int fd, char c)
+{
+    write(fd, &c, 1);
+}
+
+void
+utils_putnbr(int fd, int nb)
+{
+    if (nb < 0) {
+        utils_putchar(fd, '-');
+        if (nb == ~0x7FFFFFFF) {
+            nb = -147483648;
+            utils_putchar(fd, '2');
+        }
+        nb *= -1;
+    }
+    if (nb >= 10) {
+        utils_putnbr(fd, (nb / 10));
+        nb = (nb % 10);
+    }
+    if (nb < 10) {
+        utils_putchar(fd, (nb + 48));
+    }
+}
+
+void
+utils_putstr(int fd, const char *str)
+{
+    write(fd, str, utils_strlen(str));
+}
+
+void
 utils_vaput(int fd, char *fmt, ...)
 {
     va_list ap;

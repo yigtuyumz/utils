@@ -26,13 +26,46 @@ _libutils_ is a dynamic C library of the functions which i am using mostly.
 	utils_floor(double x);
 
 	int
+	utils_isalnum(int val);
+
+	int
+	utils_isalpha(int val);
+
+	int
+	utils_isascii(int val);
+
+	int
+	utils_isblank(int val);
+
+	int
+	utils_iscntrl(int val);
+
+	int
+	utils_isdigit(int val);
+
+	int
+	utils_isgraph(int val);
+
+	int
+	utils_islower(int val);
+
+	int
 	utils_isprime(unsigned int nb);
 
 	int
-	utils_isspace(int c);
+	utils_isprint(int val);
 
 	int
-	utils_isxdigit(int c);
+	utils_ispunct(int val);
+
+	int
+	utils_isspace(int val);
+
+	int
+	utils_isupper(int val);
+
+	int
+	utils_isxdigit(int val);
 
 	char *
 	utils_itoa(int nb);
