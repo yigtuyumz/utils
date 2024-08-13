@@ -1,5 +1,6 @@
 utils_atoi
 utils_bzero
+utils_constrain
 utils_floor
 utils_isalnum
 utils_isalpha
@@ -21,6 +22,7 @@ utils_memset
 utils_putchar
 utils_putnbr
 utils_putstr
+utils_sq
 utils_strcat
 utils_strchr
 utils_strcmp

@@ -55,6 +55,10 @@ int utils_atoi(const char *nbr);
 void utils_bzero(void *s, size_t n);
 
 /*
+ *
+ */
+int utils_constrain(int val, int min, int max);
+/*
  * Ondalikli bir sayiyi, asagiya yuvarlar.
  * 0x40000000 = 0b01000000000000000000000000000000
  */
@@ -172,6 +176,10 @@ void utils_putnbr(int fd, int nb);
  */
 void utils_putstr(int fd, const char *str);
 
+/*
+ *
+ */
+int utils_sq(void *nb);
 /*
  * `dest` ile gosterilen string ifadesinin sonuna, `src` ile gosterilen string
  * ifadesini ekler.
