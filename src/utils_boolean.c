@@ -3,7 +3,7 @@
 int
 utils_isalnum(int val)
 {
-    if (utils_isalpha(val) || utils_isupper(val)) {
+    if (utils_isalpha(val) || utils_isdigit(val)) {
         return (1);
     }
 
@@ -73,7 +73,7 @@ utils_isgraph(int val)
 {
     unsigned char c = val;
 
-    if (c >= 32 && c <= 126) {
+    if (c >= 33 && c <= 126) {
         return (1);
     }
 
