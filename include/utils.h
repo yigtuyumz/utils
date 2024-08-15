@@ -3,9 +3,7 @@
 # define UTILS_H
 # define _UTILS_MACRO 1
 
-
 # include <unistd.h>
-
 
 /*
  * _UTILS_MACRO tanimli ise ve degerine 1 atamasi yapildiysa, bitwise
@@ -43,6 +41,7 @@
 # endif /* _UTILS_MACRO */
 
 __BEGIN_DECLS
+
 /*
  * Bir string ifadesini, integer tipine donusturur.
  */
@@ -58,6 +57,7 @@ void utils_bzero(void *s, size_t n);
  *
  */
 int utils_constrain(int val, int min, int max);
+
 /*
  * Ondalikli bir sayiyi, asagiya yuvarlar.
  * 0x40000000 = 0b01000000000000000000000000000000
@@ -180,6 +180,7 @@ void utils_putstr(int fd, const char *str);
  *
  */
 int utils_sq(void *nb);
+
 /*
  * `dest` ile gosterilen string ifadesinin sonuna, `src` ile gosterilen string
  * ifadesini ekler.
@@ -206,7 +207,7 @@ int utils_strcmp(const char *a, const char *b);
  * `src` ile isaret edilen string ifadesini, `dest` ile isaret edilen string
  * ifadesine kopyalar.
  */
-char *utils_strcpy(char * restrict dest, const char * restrict src);
+char *utils_strcpy(char *restrict dest, const char *restrict src);
 
 /*
  * `str` ile isaret edilen string ifadesini, yeni bir alana kopyalar. kopyalanan
@@ -245,7 +246,7 @@ int utils_strncmp(const char *a, const char *b, size_t n);
  * - `n` degeri `src` stringinin uzunlugundan buyukse veya esit ise,
  * `src`'yi dest icerisine oldugu gibi kopyalar. (sonuna NULL ekleyerek)
  */
-char *utils_strncpy(char * restrict dest, const char * restrict src, size_t n);
+char *utils_strncpy(char *restrict dest, const char *restrict src, size_t n);
 
 /*
  * `str` isaretcisi ile gosterilen ifadenin en fazla `n` adet karakterini yeni
@@ -304,6 +305,6 @@ void utils_swapn(void *a, void *b, size_t n);
  * degerini yazar.
  */
 void utils_vaput(int fd, char *fmt, ...);
-__END_DECLS
 
+__END_DECLS
 #endif /* UTILS_H */

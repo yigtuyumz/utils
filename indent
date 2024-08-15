@@ -1,0 +1,60 @@
+FLAGS
+--break-after-boolean-operator                      -nbbo           Do not prefer to break long lines before boolean operators.
+--braces-on-if-line                                 -br             Put braces on line with if, etc.
+--cuddle-else                                       -ce             Cuddle else and preceding '}'.
+--cuddle-do-while                                   -cdw            Cuddle while of do {} while; and preceding '}'.
+--line-length80                                     -l80            Set maximum line length for non-comment lines to n.
+--case-indentation4                                 -cli4           Case label indent of n spaces.
+--space-after-cast                                  -cs             Put a space after a cast operator.
+--braces-on-struct-decl-line                        -brs            Put braces on struct declaration line.
+--blank-lines-before-block-comments                 -bbb            Force blank lines before block comments.
+--no-space-after-function-call-names                -npcs           Do not put space after the function in function calls.
+--blank-lines-after-declarations                    -bad            Force blank lines after the declarations.
+--swallow-optional-blank-lines                      -sob            Swallow optional blank lines.
+
+--indent-level4                                     -i4             Set indentation level to n spaces.
+--no-tabs                                           -nut            Use spaces instead of tabs.
+
+--leave-preprocessor-space                          -lps            Leave space between '#' and preprocessor directive.
+--preprocessor-indentation1                         -ppi1           Specify the indentation for preprocessor conditional statements.
+
+
+--start-left-side-of-comments                       -sc             ??
+--comment-delimiters-on-blank-lines                 -cdb            ??
+--comment-indentation4                              -c4             ??
+
+
+PROJECT PROFILE
+-nbbo -br -ce -cdw -l80 -cli4 -cs -brs -bbb -npcs -bad -sob -i4 -nut -lps -ppi1
+--break-after-boolean-operator --braces-on-if-line --cuddle-else --cuddle-do-while --line-length80 --case-indentation4 --space-after-cast --braces-on-struct-decl-line --blank-lines-before-block-comments --no-space-after-function-call-names --blank-lines-after-declarations --swallow-optional-blank-lines --indent-level4 --no-tabs --leave-preprocessor-space --preprocessor-indentation1
+
+
+DISCOVERED BUGS
+According to the man page, when indent is run twice on a file with the same
+profile it should never change that file the second time.
+Callback function return types: On the first run, does not produce space character
+between return type and parentheses. Second run produces.
+
+
+EXTRA C SYNTAX FEATURES OVER indent TOOL
+- Every return expression must wrapped in parentheses.
+- The last return keyword in a function, must have an empty line before.
+- A comment line is a special area for a programmer. So, a tool shouldn't modify
+them. Programmer must be aware of that speciality. So that, i invented my style
+which has these features:
+  - every comment must be /**/ type. there is no usage of // type.
+  - comments must start and end with a space character.
+    - /*this is a comment line*/   -> FALSE
+    - /* this is a comment line */ -> TRUE
+  - comment lines should not exceed 80 character in total.
+  - in a multi line comment block, each line should contain a
+  space character and a star (asterisk) to align lines. before any character,
+  one more space character must be inserted.
+    - /*                                    /*                            
+       *this is                              * this is                    
+       *a                   -> FALSE         * a                   -> TRUE
+       *multiline comment                    * multiline comment          
+       */                                    */                           
+  - main indentation level of a muiltiline comment, should be the same as the
+  code. If the code line is too long, comments must be inserted without
+  any indentations.

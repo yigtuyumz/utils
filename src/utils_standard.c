@@ -6,12 +6,7 @@ utils_atoi(const char *nbr)
     int sign = 0;
     int nb = 0;
 
-/*
-    while (!(utils_isdigit(*nbr)) || \
-           utils_isspace(*nbr)    || \
-           *(nbr) == '-'          || \
-           *(nbr) == '+')
-    {
+    while (utils_isspace(*nbr) || *(nbr) == '-' || *(nbr) == '+') {
         if (*nbr == '-') {
             sign++;
         } else if (*nbr == '+') {
@@ -19,21 +14,8 @@ utils_atoi(const char *nbr)
         }
         nbr++;
     }
-*/
 
-    while (((*nbr < 48)                          || \
-            (*nbr > 57)) && (utils_isspace(*nbr) || \
-            (*nbr == '-')                        || \
-            (*nbr == '+'))) {
-                if (*nbr == '-') {
-                    sign++;
-                } else if (*nbr == '+') {
-                    sign--;
-                }
-                nbr++;
-    }
-
-    while (*(nbr) && (*(nbr) >= 48 && *(nbr) <= 57)) {
+    while (utils_isdigit(*nbr)) {
         nb = (nb * 10) + (*nbr - 48);
         nbr++;
     }
@@ -69,4 +51,3 @@ utils_itoa(int nb)
 
     return (p);
 }
-

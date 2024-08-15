@@ -101,7 +101,7 @@ _libutils_ is a dynamic C library of the functions which i am using mostly.
 	utils_strcmp(const char *a, const char *b);
 
 	char *
-	utils_strcpy(char * restrict dest, const char * restrict src);
+	utils_strcpy(char *restrict dest, const char *restrict src);
 
 	char *
 	utils_strdup(const char *str);
@@ -116,7 +116,7 @@ _libutils_ is a dynamic C library of the functions which i am using mostly.
 	utils_strncmp(const char *a, const char *b, size_t n);
 
 	char *
-	utils_strncpy(char * restrict dest, const char * restrict src, size_t n);
+	utils_strncpy(char *restrict dest, const char *restrict src, size_t n);
 
 	char *
 	utils_strndup(const char *str, size_t len);
@@ -153,13 +153,17 @@ _libutils_ is a dynamic C library of the functions which i am using mostly.
 
 
 **TODO's**
-- Improve infrastructure of autotools build system. (consider re-write configure.ac and Makefile.am files)
+- Generate autotools build system.
 - Create an extra header file for macros and constants **(?)**
-
+- Rewrite function definitions in English.
+- indent may need extra flags in the future.
+- Write a callback function, which takes variadic arguments,
+and identify types of these arguments in that function.
 
 **Tools**
 - [Binary to Decimal Converter](https://www.rapidtables.com/convert/number/binary-to-decimal.html)
 - [Word Sort](https://www.browserling.com/tools/word-sort)
+- [GNU indent](https://www.gnu.org/software/indent/manual/dir.html#Top)
 
 
 **_See Also_**
