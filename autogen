@@ -15,6 +15,6 @@ m='=========================================='
   autoconf
   printf "\n%s\n%s\n%s\n" "$m" "./configure" "$m"
   ./configure
-  printf "\n%s\n%s\n%s\n" "$missing" "automake" "$m"
+  printf "\n%s\n%s\n%s\n" "$m" "automake" "$m"
   automake
 } | tee autogen_log
