@@ -79,13 +79,13 @@ _libutils_ is a dynamic C library of the functions which i am using mostly.
 	void *
 	utils_memset(void *dest, int c, size_t n);
 
-	void
+	ssize_t
 	utils_putchar(int fd, char c);
 
 	void
 	utils_putnbr(int fd, int nb);
 
-	void
+	ssize_t
 	utils_putstr(int fd, const char *str);
 
 	int
@@ -152,6 +152,30 @@ _libutils_ is a dynamic C library of the functions which i am using mostly.
 	Contains source files named same as the function name.
 
 
+**Build**
+- Run `./autogen` to create Makefile, then use `make` to build the library.
+Available targets for make:
+
+#### all
+`Build programs, libraries, documentation, etc. (same as make). `
+#### install
+`Install what needs to be installed, copying the files from the package's`
+`tree to system-wide directories.`
+#### install-strip
+`Same as make install, then strip debugging symbols. Some users like to trade space for useful bug reports...`
+#### uninstall
+`The opposite of make install: erase the installed files. (This needs to be run from the same build tree that was installed.)`
+#### clean
+`Erase from the build tree the files built by make all.`
+#### distclean
+`Additionally erase anything ./configure created.`
+#### check
+`Run the test suite, if any.`
+#### installcheck
+`Check the installed programs or libraries, if supported.`
+#### dist
+`Recreate package-version.tar.gz from all the source files.`
+
 **TODO's**
 - Generate autotools build system.
 - Create an extra header file for macros and constants **(?)**
@@ -159,6 +183,7 @@ _libutils_ is a dynamic C library of the functions which i am using mostly.
 - indent may need extra flags in the future.
 - Write a callback function, which takes variadic arguments,
 and identify types of these arguments in that function.
+- Write a better README.
 
 **Tools**
 - [Binary to Decimal Converter](https://www.rapidtables.com/convert/number/binary-to-decimal.html)

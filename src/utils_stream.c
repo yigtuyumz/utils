@@ -1,10 +1,10 @@
 #include "../include/utils.h"
 #include <stdarg.h>
 
-void
+ssize_t
 utils_putchar(int fd, char c)
 {
-    write(fd, &c, 1);
+    return (write(fd, &c, 1));
 }
 
 void
@@ -29,10 +29,10 @@ utils_putnbr(int fd, int nb)
     }
 }
 
-void
+ssize_t
 utils_putstr(int fd, const char *str)
 {
-    write(fd, str, utils_strlen(str));
+    return (write(fd, str, utils_strlen(str)));
 }
 
 void

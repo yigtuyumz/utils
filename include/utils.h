@@ -162,8 +162,9 @@ void *utils_memset(void *dest, int c, size_t n);
 
 /*
  * Bir adet karakteri belirtilen dosya tanimlayicisina yazar.
+ * Yazilan karakter sayisini dondurur. Hata durumunda -1 dondurur.
  */
-void utils_putchar(int fd, char c);
+ssize_t utils_putchar(int fd, char c);
 
 /*
  * Sayisal degerleri belirtilen dosya tanimlayicisina yazar.
@@ -172,9 +173,10 @@ void utils_putnbr(int fd, int nb);
 
 /*
  * `str` isaretcisi ile gosterilen string ifadesini belirtilen dosya
- * tanimlayicisina yazar.
+ * tanimlayicisina yazar. Yazilan karakter sayisini dondurur. Hata durumunda
+ * -1 dondurur.
  */
-void utils_putstr(int fd, const char *str);
+ssize_t utils_putstr(int fd, const char *str);
 
 /*
  *

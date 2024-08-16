@@ -1,11 +1,20 @@
 #!/usr/bin/env sh
-echo '' > autogen_log
 
-libtoolize --force                     >> autogen_log
-aclocal                                >> autogen_log
-autoheader                             >> autogen_log
-automake --force-missing --add-missing >> autogen_log
-autoconf                               >> autogen_log
-./configure                            >> autogen_log
-automake                               >> autogen_log
+m='=========================================='
 
+{
+  printf "%s\n%s\n%s\n" "$m" "libtoolize --force" "$m"
+  libtoolize --force
+  printf "\n%s\n%s\n%s\n" "$m" "aclocal" "$m"
+  aclocal
+  printf "\n%s\n%s\n%s\n" "$m" "autoheader" "$m"
+  autoheader
+  printf "\n%s\n%s\n%s\n" "$m" "automake --force-missing --add-missing" "$m"
+  automake --force-missing --add-missing
+  printf "\n%s\n%s\n%s\n" "$m" "autoconf" "$m"
+  autoconf
+  printf "\n%s\n%s\n%s\n" "$m" "./configure" "$m"
+  ./configure
+  printf "\n%s\n%s\n%s\n" "$missing" "automake" "$m"
+  automake
+} | tee autogen_log
