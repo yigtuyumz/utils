@@ -175,7 +175,7 @@ Check the installed programs or libraries, if supported.
 #### <u>dist</u>
 Recreate package-version.tar.gz from all the source files.
 
-**TODO's**
+## **TODO's**
 - Generate autotools build system.
 - Create an extra header file for macros and constants **(?)**
 - Rewrite function definitions in English.
@@ -184,7 +184,7 @@ Recreate package-version.tar.gz from all the source files.
 and identify types of these arguments in that function.
 - Write a better README.
 
-**Tools**
+## **Tools**
 - [Binary to Decimal Converter](https://www.rapidtables.com/convert/number/binary-to-decimal.html)
 - [Word Sort](https://www.browserling.com/tools/word-sort)
 - [GNU indent](https://www.gnu.org/software/indent/manual/dir.html#Top)
