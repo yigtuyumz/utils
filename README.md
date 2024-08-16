@@ -156,25 +156,24 @@ _libutils_ is a dynamic C library of the functions which i am using mostly.
 - Run `./autogen` to create Makefile, then use `make` to build the library.
 Available targets for make:
 
-#### all
-`Build programs, libraries, documentation, etc. (same as make). `
-#### install
-`Install what needs to be installed, copying the files from the package's`
-`tree to system-wide directories.`
-#### install-strip
-`Same as make install, then strip debugging symbols. Some users like to trade space for useful bug reports...`
-#### uninstall
-`The opposite of make install: erase the installed files. (This needs to be run from the same build tree that was installed.)`
-#### clean
-`Erase from the build tree the files built by make all.`
-#### distclean
-`Additionally erase anything ./configure created.`
-#### check
-`Run the test suite, if any.`
-#### installcheck
-`Check the installed programs or libraries, if supported.`
-#### dist
-`Recreate package-version.tar.gz from all the source files.`
+#### <u>all</u>
+Build programs, libraries, documentation, etc. (same as make).
+#### <u>install</u>
+Install what needs to be installed, copying the files from the package's tree to system-wide directories.
+#### <u>install-strip</u>
+Same as make install, then strip debugging symbols. Some users like to trade space for useful bug reports...
+#### <u>uninstall</u>
+The opposite of make install: erase the installed files. (This needs to be run from the same build tree that was installed.)
+#### <u>clean</u>
+Erase from the build tree the files built by make all.
+#### <u>distclean</u>
+Additionally erase anything ./configure created.
+#### <u>check</u>
+Run the test suite, if any.
+#### <u>installcheck</u>
+Check the installed programs or libraries, if supported.
+#### <u>dist</u>
+Recreate package-version.tar.gz from all the source files.
 
 **TODO's**
 - Generate autotools build system.
