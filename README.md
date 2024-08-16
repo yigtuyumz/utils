@@ -152,7 +152,7 @@ _libutils_ is a dynamic C library of the functions which i am using mostly.
 	Contains source files named same as the function name.
 
 
-**Build**
+# **Build**
 - Run `./autogen` to create Makefile, then use `make` to build the library.
 Available targets for make:
 
