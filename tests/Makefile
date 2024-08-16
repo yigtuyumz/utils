@@ -4,7 +4,7 @@ else
 	CC = gcc
 endif
 
-LIBDIR = $(realpath ../lib)
+LIBDIR = $(realpath ../.libs)
 OBJDIR = ./out
 CFLAGS = -Wall -Wextra -Werror -std=c99
 
