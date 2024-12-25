@@ -5,16 +5,20 @@ m='=========================================='
 {
   printf "%s\n%s\n%s\n" "$m" "libtoolize --force" "$m"
   libtoolize --force
+
   printf "\n%s\n%s\n%s\n" "$m" "aclocal" "$m"
   aclocal
+
   printf "\n%s\n%s\n%s\n" "$m" "autoheader" "$m"
   autoheader
-  printf "\n%s\n%s\n%s\n" "$m" "automake --force-missing --add-missing" "$m"
-  automake --force-missing --add-missing
+
   printf "\n%s\n%s\n%s\n" "$m" "autoconf" "$m"
   autoconf
+
+  printf "\n%s\n%s\n%s\n" "$m" "automake --add-missing" "$m"
+  automake --add-missing
+
   printf "\n%s\n%s\n%s\n" "$m" "./configure" "$m"
   ./configure
-  printf "\n%s\n%s\n%s\n" "$m" "automake" "$m"
-  automake
+
 } | tee autogen_log

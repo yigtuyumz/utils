@@ -57,3 +57,4 @@ config.h
 libtool
 /.libs
 *.la
+*.tar.gz

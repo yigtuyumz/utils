@@ -176,10 +176,8 @@ Check the installed programs or libraries, if supported.
 Recreate package-version.tar.gz from all the source files.
 
 ## **TODO's**
-- Generate autotools build system.
 - Create an extra header file for macros and constants **(?)**
 - Rewrite function definitions in English.
-- indent may need extra flags in the future.
 - Write a callback function, which takes variadic arguments,
 and identify types of these arguments in that function.
 - Write a better README.

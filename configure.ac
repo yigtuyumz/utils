@@ -1,5 +1,5 @@
 dnl autoconf minimum version
-dnl AC_PREREQ([2.72])
+AC_PREREQ([2.72])
 
 dnl project name, version and contact information
 AC_INIT([libutils], [1.0.0], [yigtuyumz@gmail.com])
@@ -9,6 +9,10 @@ AC_CONFIG_MACRO_DIR([m4])
 
 dnl automake flags, not C compiler !.
 AM_INIT_AUTOMAKE([-Wall -Werror foreign subdir-objects])
+
+dnl prevent automake builtin C compiler flags
+CFLAGS=""
+LDFLAGS=""
 
 dnl on FreeBSD, gcc named as gcc13
 AC_PROG_CC([gcc gcc13])
@@ -26,7 +30,7 @@ dnl AC_CHECK_HEADERS([header1 header2 ...],
 dnl                  [actions-if-found],
 dnl                  [actions-if-not-found],
 dnl                  [action-to-take-if-check-fails])
-AC_CHECK_HEADER([unistd.h])
+AC_CHECK_HEADERS([unistd.h malloc.h])
 
 dnl checks restrict keyword
 AC_C_RESTRICT
@@ -34,7 +38,10 @@ AC_C_RESTRICT
 dnl checks malloc function
 AC_FUNC_MALLOC
 
-dnl checks size_t
+dnl checks ssize_t type
+AC_TYPE_SSIZE_T
+
+dnl checks size_t type
 AC_TYPE_SIZE_T
 
 dnl creates config.h file and set C macros with values adjusted by autotools
@@ -45,7 +52,7 @@ AC_MSG_NOTICE([================================================])
 AC_MSG_NOTICE([====================libutils====================])
 AC_MSG_NOTICE([================================================])
 
-dnl initializing libtool
+dnl initializing libtool (libtoolize)
 LT_INIT
 
 dnl redirects created output to the related files
