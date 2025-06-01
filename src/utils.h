@@ -105,6 +105,11 @@ int utils_isgraph(int val);
 int utils_islower(int val);
 
 /*
+ *
+ */
+int utils_ispowtwo(unsigned int x);
+
+/*
  * Bir sayinin asal olup olmama durumunu 6k+-1 teoremini kullanarak denetler.
  * - sayi asal ise `1` degil ise `0` degerini dondurur.
  */

@@ -53,6 +53,9 @@ _libutils_ is a dynamic C library of the functions which i am using mostly.
 	utils_islower(int val);
 
 	int
+	utils_ispowtwo(unsigned int x);
+
+	int
 	utils_isprime(unsigned int nb);
 
 	int

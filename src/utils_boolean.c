@@ -1,4 +1,4 @@
-#include "../include/utils.h"
+#include "utils.h"
 
 int
 utils_isalnum(int val)
@@ -90,6 +90,12 @@ utils_islower(int val)
     }
 
     return (0);
+}
+
+int
+utils_ispowtwo(unsigned int x)
+{
+    return ((x & (x - 1)) == 0);
 }
 
 int

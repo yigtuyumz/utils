@@ -1,4 +1,4 @@
-#include "../include/utils.h"
+#include "utils.h"
 
 int
 utils_atoi(const char *nbr)

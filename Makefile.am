@@ -8,7 +8,7 @@ libutils_la_SOURCES = \
 	src/utils_stream.c \
 	src/utils_string.c
 
-include_HEADERS = include/utils.h
+include_HEADERS = src/utils.h
 ACLOCAL_AMFLAGS = -I m4
 AM_CFLAGS = -Wall -Wextra -Werror -I./include -fPIC -std=c99
 AM_LDFLAGS = 

@@ -39,22 +39,21 @@ between return type and parentheses. Second run produces.
 EXTRA C SYNTAX FEATURES OVER indent TOOL
 - Every return expression must wrapped in parentheses.
 - The last return keyword in a function, must have an empty line before.
-- A comment line is a special area for a programmer. So, a tool shouldn't modify
+- Comment lines are special places for the programmer. Tools shouldn't modify
 them. Programmer must be aware of that speciality. So that, i invented my style
 which has these features:
   - every comment must be /**/ type. there is no usage of // type.
   - comments must start and end with a space character.
-    - /*this is a comment line*/   -> FALSE
-    - /* this is a comment line */ -> TRUE
+    - /*this is a falsy comment line*/   -> FALSE
+    - /* this is a correctly indented comment line */ -> TRUE
   - comment lines should not exceed 80 character in total.
   - in a multi line comment block, each line should contain a
-  space character and a star (asterisk) to align lines. before any character,
-  one more space character must be inserted.
+  space character and an asterisk to align lines. Before any character,
+  one more space character should be inserted.
     - /*                                    /*                            
        *this is                              * this is                    
        *a                   -> FALSE         * a                   -> TRUE
        *multiline comment                    * multiline comment          
        */                                    */                           
   - main indentation level of a muiltiline comment, should be the same as the
-  code. If the code line is too long, comments must be inserted without
-  any indentations.
+  code. If line is too long, comments must be inserted without any indentations.
